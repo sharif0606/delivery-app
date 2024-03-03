@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+
+}
+.all-content{
+    background: #f7f5f2;
+}
+html ::-webkit-scrollbar-track{
+    background: transparent;
+}
+html ::-webkit-scrollbar-thumb{
+    background-color: azure;
+    border-radius: 10px;
+}
+html ::-webkit-scrollbar{
+    width: 10px;
+}
+.navbar{
+    background-color: rgb(111, 124, 165);
+}
+.nav-item .nav-link{
+    color: black;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: 0.5s;
+    
+}
+.nav-item .nav-link:hover{
+    background: rgb(221, 219, 225);
+     border-radius: 5px;
+    color: black;
+}
+#home{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(141, 137, 137, 0.04),rgba(0,0,0,0.3)),url(./images/rush.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 88%;
+}
+#home .content{
+padding-top: 210px;
+margin-left: 56px;
+}
+#home .content h4{
+    text-align: center;
+    margin-left: 53%;
+    margin-top: 6%;
+    font-size: 32px;
+    
+    color: rgb(27, 26, 26);
+
+}
+#about{
+    width: 100%;
+    height: 77vh;
+    margin-top: 50px;
+
+}
+#about.container{
+    padding-top: 70px;
+}
+.heading{
+    text-align:center;
+    margin-bottom:50px;
+    color: rgb(50, 53, 105);
+    font-size: 30px;
+    font-weight: bold;
+}
+.heading span{
+    color: rgb(85, 133, 127);
+
+}
+#about .card{
+    border-radius: 10px;
+}
+
+#about .card img{
+    border-radius: 10px;
+}
+#about p{
+    text-align: justify;
+    font-size: 20px;
+}
+
+@media screen and (max-width:766px){
+    #about p{
+
+        
+        height: 120vh;
+    }
+
+    
+}
+#footer{
+    width: 100%;
+    background: #625f6c;
+    margin-top: 50px;
+    height: 30vh;
+}
+ .social-links i{
+    font-size: 17px;
+    margin-left: 10px;
+    margin-top: 30px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.credits{
+    color: white;
+    margin-top: 20px;
+    text-shadow: 0px 0px 1px black;
+}
+.credits a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+#credits a span{
+    color:black;
+}
+.copyright span{
+    color: black;
+}
+html{
+    scroll-behavior: smooth;
+}
