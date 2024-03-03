@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as home;
+use App\Http\Controllers\AuthenticationController as auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,8 @@ use App\Http\Controllers\Frontend\HomeController as home;
 
 
 Route::get('/', [home::class,'index'])->name('home');
+Route::get('/order-track', [home::class,'orderTrack'])->name('orderTrack');
+
+/* auth route*/
+Route::get('/sign-in', [auth::class,'login'])->name('login');
+

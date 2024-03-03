@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#home">Home </a>
+                            <a class="nav-link" aria-current="page" href="{{route('home')}}">Home </a>
                         </li>
 
                         <li class="nav-item">
@@ -39,10 +39,10 @@
                             <a class="nav-link" href="#service">Service</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#track">Track</a>
+                            <a class="nav-link" href="{{route('orderTrack')}}">Track</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#signin">Sign In/Up</a>
+                            <a class="nav-link" href="{{route('login')}}">Sign In/Up</a>
                         </li>
 
 
@@ -77,6 +77,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    @stack('scripts')
 
 </body>
 

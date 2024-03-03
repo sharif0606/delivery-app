@@ -36,7 +36,7 @@ html ::-webkit-scrollbar{
 #home{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(141, 137, 137, 0.04),rgba(0,0,0,0.3)),url(./images/rush.jpg);
+    background-image: linear-gradient(rgba(141, 137, 137, 0.04),rgba(0,0,0,0.3)),url(../images/rush.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 88%;
@@ -129,4 +129,36 @@ margin-left: 56px;
 }
 html{
     scroll-behavior: smooth;
+}
+
+
+main {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#tracking-results {
+    margin-top: 20px;
 }
