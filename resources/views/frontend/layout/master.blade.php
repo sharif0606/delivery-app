@@ -42,7 +42,7 @@
                             <a class="nav-link" href="{{route('orderTrack')}}">Track</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">Sign In/Up</a>
+                            <a class="nav-link" href="{{route('signin')}}">Sign In/Up</a>
                         </li>
 
 

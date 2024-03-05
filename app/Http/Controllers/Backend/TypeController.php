@@ -12,7 +12,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $data=Type::latest()->paginate();
+        return view('backend.type.index',compact($data));
     }
 
     /**
@@ -20,7 +21,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.type.create');
     }
 
     /**
@@ -28,7 +29,7 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
