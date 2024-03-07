@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as home;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dash;
+use App\Http\Controllers\Backend\AdminCalcController as calc;
+
 
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isCustomer;
@@ -44,3 +46,27 @@ Route::group(['middleware'=>isAdmin::class],function(){
 
     });
 });
+
+Route::group(['middleware'=>isDelivaryMan::class],function(){
+    Route::prefix('deliveryman')->group(function(){
+        Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('deliveryman.dashboard');
+        /* settings */
+        Route::resource('type',user::class,['as'=>'deliveryman']);
+        Route::resource('user',user::class,['as'=>'deliveryman']);
+
+    });
+});
+
+Route::group(['middleware'=>isCustomer::class],function(){
+    Route::prefix('customer')->group(function(){
+        Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('customer.dashboard');
+        /* settings */
+        Route::resource('type',user::class,['as'=>'customer']);
+        Route::resource('user',user::class,['as'=>'customer']);
+
+    });
+});
+
+
+Route::get('/costset', [calc::class,'costset'])->name('costcalc');
+
