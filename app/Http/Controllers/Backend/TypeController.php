@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -12,8 +14,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $data=Type::latest()->paginate();
-        return view('backend.type.index',compact($data));
+        $data=Type::latest()->paginate(10);
+        return view('backend.admin.type.index',compact('data'));
     }
 
     /**
@@ -21,7 +23,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('backend.type.create');
+        return view('backend.admin.type.create');
     }
 
     /**
@@ -29,7 +31,13 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //dd($request->all());
+        try{
+            Type::create($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.type.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -45,7 +53,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('backend.admin.type.edit',compact('type'));
     }
 
     /**
@@ -53,7 +61,12 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-        //
+        try{
+            $type->update($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.type.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -61,6 +74,11 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        try{
+            $type->delete();
+            return redirect()->route(request()->session()->get('roleIdentity').'.type.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 }

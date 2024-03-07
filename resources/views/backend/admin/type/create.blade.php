@@ -8,16 +8,12 @@
                     <div class="card-header">Type selects</div>
 
                     <div class="card-body">
-                        <form method="POST" action="">
+                        <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.type.store')}}">
                             @csrf
-
                             <div class="form-group">
                                 <label for="id">Type</label>
-                                <input type="number" class="form-control" id="type" name="type" required>
+                                <input type="text" class="form-control" id="type" name="name" value="{{old('name')}}" required>
                             </div>
-
-                            
-
                             <button type="submit" class="btn btn-primary"> Submit </button>
                         </form>
                     </div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\Frontend\HomeController as home;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dash;
 use App\Http\Controllers\Backend\AdminCalcController as calc;
+use App\Http\Controllers\Backend\TypeController as dtype;
+
 
 
 use App\Http\Middleware\isAdmin;
@@ -41,8 +43,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
         Route::get('/dashboard', [dash::class,'adminDashboard'])->name('admin.dashboard');
         /* settings */
-        Route::resource('type',user::class,['as'=>'admin']);
-        Route::resource('user',user::class,['as'=>'admin']);
+        Route::resource('type',dtype::class,['as'=>'admin']);
+        //Route::resource('user',user::class,['as'=>'admin']);
 
     });
 });
@@ -51,8 +53,7 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
     Route::prefix('deliveryman')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('deliveryman.dashboard');
         /* settings */
-        Route::resource('type',user::class,['as'=>'deliveryman']);
-        Route::resource('user',user::class,['as'=>'deliveryman']);
+        
 
     });
 });
@@ -61,8 +62,6 @@ Route::group(['middleware'=>isCustomer::class],function(){
     Route::prefix('customer')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('customer.dashboard');
         /* settings */
-        Route::resource('type',user::class,['as'=>'customer']);
-        Route::resource('user',user::class,['as'=>'customer']);
 
     });
 });
