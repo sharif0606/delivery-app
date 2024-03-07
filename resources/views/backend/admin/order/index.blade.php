@@ -1,21 +1,17 @@
-@extends()
+@extends('backend.master')
 
-@section(content)
-
-<section id="home">
-    <div class="content">
-        <h4>Your Trusted Route to Reliable Delivery</h4>
-
-
-    </div>
-</section>
-
-<main class="content px-3 py-4">
-    <div class="container-fluid">
-        <div class="mb-3">
-            <h3 class="fw-bold fs-4 my-3">Avg. Agent Earnings</h3>
-            <div class="row">
-                <div class="col-12">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card formi">
+                <div class="card-header">Order</div>
+                <div class="card-body">
+                   
+                    <a href="{{route(request()->session()->get('roleIdentity').'.type.create')}}" class="btn btn-primary">
+                        <i class="lni lni-agenda"></i>
+                        Add New
+                    </a>
                     <table class="table table-striped">
                         <thead>
                             <tr class="highlight">
@@ -42,4 +38,6 @@
             </div>
         </div>
     </div>
-</main>
+</div>
+
+@endsection
