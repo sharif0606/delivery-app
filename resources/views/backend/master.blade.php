@@ -26,9 +26,9 @@
             <ul class="sidebar-nav">
 
                 <li class="sidebar-item">
-                    <a href="Orders.php" class="sidebar-link">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.type.index')}}" class="sidebar-link">
                         <i class="lni lni-agenda"></i>
-                        <span>Orders</span>
+                        <span>Document Type</span>
                     </a>
                 </li>
 
