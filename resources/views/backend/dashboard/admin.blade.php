@@ -10,10 +10,10 @@
                     <div class="card border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Memebers Progress
+                                Total Due Delivery
                             </h5>
                             <p class="mb-2 fw-bold">
-                                $72,540
+                                50
                             </p>
                             <div class="mb-0">
                                 <span class="badge text-success me-2">
@@ -30,10 +30,10 @@
                     <div class="card  border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Memebers Progress
+                                Confirmed delivery
                             </h5>
                             <p class="mb-2 fw-bold">
-                                $72,540
+                                30
                             </p>
                             <div class="mb-0">
                                 <span class="badge text-success me-2">
