@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\TypeController as dtype;
 
 
 
+
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isCustomer;
 use App\Http\Middleware\isDelivaryMan;
