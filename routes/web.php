@@ -36,6 +36,7 @@ Route::get('/', [home::class,'index'])->name('home');
 Route::get('/order-track', [home::class,'orderTrack'])->name('orderTrack');
 
 /* auth route*/
+Route::get('/log-in', [auth::class,'loggedin'])->name('loggedin');
 Route::get('/sign-in', [auth::class,'signin'])->name('signin');
 Route::post('/sign-up', [auth::class,'register'])->name('register');
 Route::post('/sign-in', [auth::class,'login'])->name('login');
@@ -47,7 +48,6 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
         //Route::resource('user',user::class,['as'=>'admin']);
-
     });
 });
 
@@ -55,8 +55,6 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
     Route::prefix('deliveryman')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('deliveryman.dashboard');
         /* settings */
-        
-
     });
 });
 
