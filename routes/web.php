@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dash;
 use App\Http\Controllers\Backend\AdminCalcController as calc;
 use App\Http\Controllers\Backend\TypeController as dtype;
-use App\Http\Controllers\Backend\OrderController as order;
+use App\Http\Controllers\Backend\LocationController as loc;
 
 
 
@@ -45,7 +45,6 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::get('/dashboard', [dash::class,'adminDashboard'])->name('admin.dashboard');
         /* settings */
         Route::resource('type',dtype::class,['as'=>'admin']);
-        Route::resource('order',order::class,['as'=>'admin']);
         //Route::resource('user',user::class,['as'=>'admin']);
 
     });
