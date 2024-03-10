@@ -33,7 +33,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link  " href="#about">About</a>
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#service">Service</a>
@@ -42,11 +42,8 @@
                             <a class="nav-link" href="{{route('orderTrack')}}">Track</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('signin')}}">Sign In/Up</a>
+                            <a class="nav-link" href="{{route('loggedin')}}">Sign In/Up</a>
                         </li>
-
-
-
                     </ul>
 
                 </div>
