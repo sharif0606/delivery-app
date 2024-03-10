@@ -8,12 +8,12 @@
                     <div class="card-header">Type selects</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.type.update',$type->id)}}">
+                        <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.location.update',$location->id)}}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="id">Type</label>
-                                <input type="text" class="form-control" id="type" name="name" value="{{old('name',$type->name)}}" required>
+                                <input type="text" class="form-control" id="location" name="name" value="{{old('name',$location->name)}}" required>
                             </div>
                             <button type="submit" class="btn btn-primary"> Submit </button>
                         </form>

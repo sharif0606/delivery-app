@@ -7,6 +7,9 @@ use App\Http\Controllers\Backend\DashboardController as dash;
 use App\Http\Controllers\Backend\AdminCalcController as calc;
 use App\Http\Controllers\Backend\TypeController as dtype;
 use App\Http\Controllers\Backend\OrderController as order;
+use App\Http\Controllers\Backend\LocationController as dloc;
+use App\Http\Controllers\Backend\OrderControllerCus as corder;
+
 
 
 
@@ -47,6 +50,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         /* settings */
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
+        Route::resource('location',dloc::class,['as'=>'admin']);
         //Route::resource('user',user::class,['as'=>'admin']);
     });
 });
@@ -54,6 +58,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
 Route::group(['middleware'=>isDelivaryMan::class],function(){
     Route::prefix('deliveryman')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('deliveryman.dashboard');
+        
         /* settings */
     });
 });
@@ -62,6 +67,7 @@ Route::group(['middleware'=>isCustomer::class],function(){
     Route::prefix('customer')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('customer.dashboard');
         /* settings */
+        Route::resource('order',corder::class,['as'=>'customer']);
 
     });
 });
