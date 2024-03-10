@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
 
 use App\Models\DeliveryCostCalculator;
 use App\Http\Controllers\Controller;
+use App\Models\Location;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class DeliveryCostCalculatorController extends Controller
@@ -13,7 +16,8 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('backend.admin.cost_settings.index');
     }
 
     /**
@@ -21,7 +25,9 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function create()
     {
-        //
+        $location=Location::orderBy('name')->get();
+        $type=Type::orderBy('name')->get();
+        return view('backend.admin.cost_settings.create',compact('location','type'));
     }
 
     /**
@@ -29,7 +35,12 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            DeliveryCostCalculator::create($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.cost_settings.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -43,9 +54,12 @@ class DeliveryCostCalculatorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DeliveryCostCalculator $deliveryCostCalculator)
+    public function edit($cost_settings)
     {
-        //
+        $location=Location::orderBy('name')->get();
+        $type=Type::orderBy('name')->get();
+        $data=DeliveryCostCalculator::find($cost_settings);
+        return view('backend.admin.cost_settings.edit',compact('location','type','data'));
     }
 
     /**
@@ -53,7 +67,12 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function update(Request $request, DeliveryCostCalculator $deliveryCostCalculator)
     {
-        //
+        try{
+            $deliveryCostCalculator->update($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.cost_settings.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -61,6 +80,11 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function destroy(DeliveryCostCalculator $deliveryCostCalculator)
     {
-        //
+        try{
+            $deliveryCostCalculator->delete();
+            return redirect()->route(request()->session()->get('roleIdentity').'.cost_settings.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->bigInteger('from_location_id');
             $table->bigInteger('to_location_id');
             $table->bigInteger('type_id');
-            $table->decimal('weight_form',10,2);
+            $table->decimal('weight_from',10,2);
             $table->decimal('weight_to',10,2)->nullable();
             $table->decimal('base_price',10,2);
             $table->decimal('weight_cost',10,2)->nullable();

@@ -4,12 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as home;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dash;
-use App\Http\Controllers\Backend\AdminCalcController as calc;
 use App\Http\Controllers\Backend\TypeController as dtype;
 
-use App\Http\Controllers\Backend\LocationController as loc;
-use App\Http\Controllers\Backend\OrderController as order;
 use App\Http\Controllers\Backend\LocationController as dloc;
+use App\Http\Controllers\Backend\OrderController as order;
+use App\Http\Controllers\Backend\DeliveryCostCalculatorController as cost_settings;
 use App\Http\Controllers\Backend\OrderControllerCus as corder;
 
 
@@ -52,8 +51,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::get('/dashboard', [dash::class,'adminDashboard'])->name('admin.dashboard');
         /* settings */
         Route::resource('type',dtype::class,['as'=>'admin']);
-
         Route::resource('order',order::class,['as'=>'admin']);
+        Route::resource('cost_settings',cost_settings::class,['as'=>'admin']);
         Route::resource('location',dloc::class,['as'=>'admin']);
 
         //Route::resource('user',user::class,['as'=>'admin']);
@@ -76,7 +75,3 @@ Route::group(['middleware'=>isCustomer::class],function(){
 
     });
 });
-
-
-Route::get('/costset', [calc::class,'costset'])->name('costcalc');
-
