@@ -29,7 +29,7 @@ class AuthenticationController extends Controller
                 'password' => Hash::make($request->password)
             ]);
             
-                return redirect()->back()->withInput();
+            return redirect()->route('loggedin');
             
         }catch(\Exception $e){
             dd($e);
@@ -45,9 +45,9 @@ class AuthenticationController extends Controller
                 if($user->role_id==1)
                     return redirect()->route('admin.dashboard');
                 else if($user->role_id==2)
-                    return redirect(route('customerDashboard'));
+                    return redirect(route('customer.dashboard'));
                 else
-                    return redirect(route('deliverymanDashboard'));
+                    return redirect(route('deliveryman.dashboard'));
 
             }else{
                 return redirect()->back()->withInput();
@@ -71,6 +71,6 @@ class AuthenticationController extends Controller
 
     public function logOut(){
         request()->session()->flush();
-        redirect(route('home'));
+        return redirect()->route('home');
     }
 }

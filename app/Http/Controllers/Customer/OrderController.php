@@ -14,8 +14,9 @@ class OrderController extends Controller
     
     public function index()
     {
-        $order= Order::latest()->paginate(10);
-        return view('backend.customer.order.index');
+        $user = request()->session()->get('userId');
+        $orders = Order::where('customer_id', $user)->latest()->paginate(10);
+        return view('backend.customer.order.index', compact('orders'));
     }
     public function create()
     {
