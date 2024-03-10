@@ -16,6 +16,10 @@ class AuthenticationController extends Controller
         return view('authentication.signup');
     }
 
+    public function loggedin(){
+        return view('authentication.login');
+    }
+
     public function register(SignupRequest $request){
         try{
             $user = User::create([
@@ -31,6 +35,7 @@ class AuthenticationController extends Controller
             dd($e);
         }
     }
+
     public function login(SigninRequest $request){
         try{
             $user = User::where('email', $request->email)->first();

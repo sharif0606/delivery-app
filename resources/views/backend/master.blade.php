@@ -33,6 +33,13 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.location.index')}}" class="sidebar-link">
+                        <i class="lni lni-travel"></i>
+                        <span>Locations</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a href="index.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
                         <span>Customer</span>
