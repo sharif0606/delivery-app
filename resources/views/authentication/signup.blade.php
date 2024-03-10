@@ -55,7 +55,7 @@
             </div>
 
             <div class="links">
-                <a href="#"></a>
+                <a href="{{route('loggedin')}}">Log In</a>
             </div>
             <input type="submit" value="Sign up">
         </form>
