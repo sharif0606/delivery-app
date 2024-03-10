@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Location;
@@ -13,7 +13,8 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        $data=Location::latest()->paginate(10);
+        return view('backend.admin.location.index',compact('data')); //
     }
 
     /**
@@ -21,7 +22,7 @@ class LocationController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.admin.location.create');
     }
 
     /**
@@ -29,7 +30,12 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            Location::create($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.location.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -45,7 +51,7 @@ class LocationController extends Controller
      */
     public function edit(Location $location)
     {
-        //
+        return view('backend.admin.location.edit',compact('location'));
     }
 
     /**
@@ -53,7 +59,12 @@ class LocationController extends Controller
      */
     public function update(Request $request, Location $location)
     {
-        //
+        try{
+            $location->update($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.location.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -61,6 +72,11 @@ class LocationController extends Controller
      */
     public function destroy(Location $location)
     {
-        //
+        try{
+            $location->delete();
+            return redirect()->route(request()->session()->get('roleIdentity').'.location.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 }

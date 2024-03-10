@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\DashboardController as dash;
 use App\Http\Controllers\Backend\AdminCalcController as calc;
 use App\Http\Controllers\Backend\TypeController as dtype;
 use App\Http\Controllers\Backend\OrderController as order;
+use App\Http\Controllers\Backend\LocationController as dloc;
 
 
 
@@ -46,6 +47,7 @@ Route::group(['middleware'=>isAdmin::class],function(){
         /* settings */
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
+        Route::resource('location',dloc::class,['as'=>'admin']);
         //Route::resource('user',user::class,['as'=>'admin']);
 
     });
