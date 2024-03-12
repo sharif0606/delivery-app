@@ -1,6 +1,6 @@
-@extends('customer.master')
+@extends('backend.master_customer')
 
-@section
+@section('content')
 
     <div class="container">
             <div class="row justify-content-center">

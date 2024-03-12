@@ -9,7 +9,9 @@ use App\Http\Controllers\Backend\TypeController as dtype;
 use App\Http\Controllers\Backend\LocationController as dloc;
 use App\Http\Controllers\Backend\OrderController as order;
 use App\Http\Controllers\Backend\DeliveryCostCalculatorController as cost_settings;
-use App\Http\Controllers\Backend\OrderControllerCus as corder;
+
+/* customer */
+use App\Http\Controllers\Customer\OrderController as corder;
 
 
 
@@ -45,6 +47,7 @@ Route::get('/log-in', [auth::class,'loggedin'])->name('loggedin');
 Route::get('/sign-in', [auth::class,'signin'])->name('signin');
 Route::post('/sign-up', [auth::class,'register'])->name('register');
 Route::post('/sign-in', [auth::class,'login'])->name('login');
+Route::get('/sign-out', [auth::class,'logOut'])->name('logout');
 
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
@@ -69,9 +72,12 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
 
 Route::group(['middleware'=>isCustomer::class],function(){
     Route::prefix('customer')->group(function(){
-        Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('customer.dashboard');
+        Route::get('/dashboard', [dash::class,'customerDashboard'])->name('customer.dashboard');
         /* settings */
-        Route::resource('order',corder::class,['as'=>'customer']);
+        Route::get('order',[corder::class,'index'])->name('customer.order.index');
+        Route::get('order/create',[corder::class,'create'])->name('customer.order.create');
+        Route::get('order/check_rate',[corder::class,'check_rate'])->name('customer.order.check_rate');
+        Route::post('order/store',[corder::class,'store'])->name('customer.order.store');
 
     });
 });
