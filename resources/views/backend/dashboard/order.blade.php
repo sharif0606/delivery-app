@@ -4,7 +4,7 @@
 
     
 
-    <<!-- resources/views/deliveryman/dashboard.blade.php -->
+<!-- resources/views/deliveryman/dashboard.blade.php -->
 
 @extends('layouts.app')
 
