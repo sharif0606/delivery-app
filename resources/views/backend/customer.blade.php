@@ -20,7 +20,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr class="highlight">
-                            <th scope="col">#</th>
+                                <th scope="col">#</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Orders given</th>
@@ -29,7 +29,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <th scope="row">1</th>
+                                <th scope="row">1</th>
                                 <td>Mark</td>
                                 <td>01********</td>
                                 <td>10</td>
