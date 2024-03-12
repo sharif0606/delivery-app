@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courier Order Form</title>
+<link rel="stylesheet" href="form_customer.css">
+</head>
+<body>
+<div class="container">
+  <h2>Order Form</h2>
+  <form id="orderForm">
+    <div class="form-group">
+      <label for="fromLocation">From Location:</label>
+      <select id="fromLocation" name="fromLocation">
+        <option value="Chittagong">Chittagong</option>
+        <option value="Dhaka">Dhaka</option>
+        <option value="Khulna">Khulna</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="toLocation">To Location:</label>
+      <select id="toLocation" name="toLocation">
+        <option value="Chittagong">Chittagong</option>
+        <option value="Dhaka">Dhaka</option>
+        <option value="Khulna">Khulna</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="parcelType">Parcel Type:</label>
+      <select id="parcelType" name="parcelType">
+        <option value="Type 1">Document</option>
+        <option value="Type 2">Package</option>
+      
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="note">Note:</label>
+      <textarea id="note" name="note" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="parcelWeight">Parcel Weight (kg):</label>
+      <input type="number" id="parcelWeight" name="parcelWeight" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <button type="button" onclick="calculateDeliveryCost()">Calculate Delivery Cost</button><br><br>
+
+        <label for="totalCost">Total Delivery Cost:</label>
+        <span id="totalCost"></span><br><br>
+
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+
