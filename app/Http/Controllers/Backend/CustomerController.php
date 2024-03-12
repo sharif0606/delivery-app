@@ -13,7 +13,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
+    
         $data=User::where('role_id',2)->paginate();
+        return view('backend.admin.customer.index',compact('data'));
         //
     }
 
