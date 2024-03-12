@@ -28,22 +28,21 @@
                                 </tr>
                             </thead>
                             @forelse($data as $d)
-                            
                                 <tr>
                                     <td>{{$d->id}}</td>
-                                    <td>{{$d->from_location_id}}</td>
-                                    <td>{{$d->to_location_id}}</td>
-                                    <td>{{$d->type_id}}</td>
+                                    <td>{{$d->fromCountry?->name}}</td>
+                                    <td>{{$d->toCountry?->name}}</td>
+                                    <td>{{$d->docType?->name}}</td>
                                     <td>{{$d->weight_from}}</td>
                                     <td>{{$d->weight_to}}</td>
                                     <td>{{$d->base_price}}</td>
                                     <td>{{$d->weight_cost}}</td>
                                     <td>
-                                        <a href="{{route(request()->session()->get('roleIdentity').'.location.edit',$d->id)}}" class="btn btn-info">
+                                        <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.edit',$d->id)}}" class="btn btn-info">
                                             <i class="lni lni-pencil"></i>
                                         Edit
                                         </a>
-                                        <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.location.destroy',$d->id)}}" method="post">
+                                        <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.cost_settings.destroy',$d->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
@@ -51,6 +50,9 @@
                                                 
                                     </td>
                                 </tr>
+                            @empty
+
+                            @endforelse
                         </table>
                     </div>
                 </div>

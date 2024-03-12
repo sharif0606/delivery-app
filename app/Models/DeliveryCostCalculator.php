@@ -18,4 +18,14 @@ class DeliveryCostCalculator extends Model
     	'base_price',
     	'weight_cost',
     ];
+
+    public function fromCountry(){
+        return $this->belongsTo(Location::class,'from_location_id','id');
+    }
+    public function toCountry(){
+        return $this->belongsTo(Location::class,'to_location_id','id');
+    }
+    public function docType(){
+        return $this->belongsTo(Type::class,'type_id','id');
+    }
 }

@@ -66,9 +66,10 @@ class DeliveryCostCalculatorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DeliveryCostCalculator $deliveryCostCalculator)
+    public function update(Request $request, $cost_settings)
     {
         try{
+            $deliveryCostCalculator=DeliveryCostCalculator::find($cost_settings);
             $deliveryCostCalculator->update($request->all());
             return redirect()->route(request()->session()->get('roleIdentity').'.cost_settings.index');
         }catch(\Exception $e){
