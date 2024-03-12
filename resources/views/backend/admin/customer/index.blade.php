@@ -22,19 +22,21 @@
                             <tr class="highlight">
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Phone</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Orders given</th>
-                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse($data as $c)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>01********</td>
+                                <th>{{$c->id}}</th>
+                                <td>{{$c->name}}</td>
+                                <td>{{$c->email}}</td>
                                 <td>10</td>
-                                <td>blocked</td>
                             </tr>
+                            @empty
+
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

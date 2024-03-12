@@ -23,6 +23,7 @@ class Order extends Model
     	'price',
     	'delivery_cost_base',
     	'delivery_cost_weight',
+    	'urgent_cost',
     	'note',
     	'pickup_date',
     	'delivery_date',

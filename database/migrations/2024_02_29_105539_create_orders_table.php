@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('customer_id');
-            $table->bigInteger('delivery_boy_id');
+            $table->bigInteger('delivery_boy_id')->nullable();
             $table->bigInteger('type_id');
             $table->boolean('is_urgent')->default(false);
             $table->string('pickup_address',500)->nullable();
@@ -23,12 +23,13 @@ return new class extends Migration
             $table->bigInteger('delivery_location');
             $table->text('product');
             $table->decimal('weight',10,2);
-            $table->decimal('price',10,2);
-            $table->decimal('delivery_cost_base',10,2);
-            $table->decimal('delivery_cost_weight',10,2);
-            $table->text('note'); 
-            $table->date('pickup_date'); 
-            $table->date('delivery_date'); 
+            $table->decimal('price',10,2)->default(0);
+            $table->decimal('delivery_cost_base',10,2)->default(0);
+            $table->decimal('delivery_cost_weight',10,2)->default(0);
+            $table->decimal('urgent_cost',10,2)->default(0);
+            $table->text('note')->nullable(); 
+            $table->date('pickup_date')->nullable(); 
+            $table->date('delivery_date')->nullable(); 
             $table->integer('status')->default(0)->comment('0=pending,1=accpted,2=processing,3=completed,4=return'); 
             $table->timestamps();
         });
