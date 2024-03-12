@@ -25,3 +25,4 @@ class OrderController extends Controller
         return view('backend.customer.order.create',compact('location','type'));
     }
 }
+

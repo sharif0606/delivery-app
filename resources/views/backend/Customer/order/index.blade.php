@@ -10,7 +10,7 @@
                         <div class="card-body">
                         
                             
-                            <table>
+                            <table >
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>

@@ -15,9 +15,42 @@
                         </a>
 
                         <table>
-                            <tr>
-                                <th></th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>#SL</th>
+                                    <th>From Location</th>
+                                    <th>To Location</th>
+                                    <th>Type</th>
+                                    <th>Weight From:</th>
+                                    <th>Weight To:</th>
+                                    <th>Base Price:</th>
+                                    <th>Weight Cost:</th>
+                                </tr>
+                            </thead>
+                            @forelse($data as $d)
+                            
+                                <tr>
+                                    <td>{{$d->id}}</td>
+                                    <td>{{$d->from_location_id}}</td>
+                                    <td>{{$d->to_location_id}}</td>
+                                    <td>{{$d->type_id}}</td>
+                                    <td>{{$d->weight_from}}</td>
+                                    <td>{{$d->weight_to}}</td>
+                                    <td>{{$d->base_price}}</td>
+                                    <td>{{$d->weight_cost}}</td>
+                                    <td>
+                                        <a href="{{route(request()->session()->get('roleIdentity').'.location.edit',$d->id)}}" class="btn btn-info">
+                                            <i class="lni lni-pencil"></i>
+                                        Edit
+                                        </a>
+                                        <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.location.destroy',$d->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
+                                        </form>
+                                                
+                                    </td>
+                                </tr>
                         </table>
                     </div>
                 </div>

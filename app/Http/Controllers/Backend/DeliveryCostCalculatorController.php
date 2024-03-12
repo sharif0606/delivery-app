@@ -16,8 +16,8 @@ class DeliveryCostCalculatorController extends Controller
      */
     public function index()
     {
-
-        return view('backend.admin.cost_settings.index');
+        $data=DeliveryCostCalculator::latest()->paginate(10);
+        return view('backend.admin.cost_settings.index',compact('data'));
     }
 
     /**
@@ -27,6 +27,7 @@ class DeliveryCostCalculatorController extends Controller
     {
         $location=Location::orderBy('name')->get();
         $type=Type::orderBy('name')->get();
+        
         return view('backend.admin.cost_settings.create',compact('location','type'));
     }
 
