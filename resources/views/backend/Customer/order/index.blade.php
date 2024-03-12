@@ -1,6 +1,6 @@
-@extends('customer.master')
+@extends('backend.master_customer')
 
-@section
+@section('content')
 
     <div class="container">
             <div class="row justify-content-center">
@@ -10,7 +10,7 @@
                         <div class="card-body">
                         
                             
-                            <table>
+                            <table >
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>

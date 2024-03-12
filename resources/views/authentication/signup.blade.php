@@ -49,7 +49,7 @@
             </div>
 
             <div class="inputbox">
-                <input type="password" required="required" name="confirm_password">
+                <input type="password" required="required" name="password_confirmation">
                 <span>Confirm password</span>
                 <i></i>
             </div>
