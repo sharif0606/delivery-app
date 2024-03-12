@@ -25,14 +25,7 @@
                                     <td>
                                         <a href="{{route(request()->session()->get('roleIdentity').'.type.edit',$d->id)}}" class="btn btn-info">
                                             <i class="lni lni-pencil"></i>
-                                           Edit
                                         </a>
-                                        <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.type.destroy',$d->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
-                                        </form>
-                                        
                                     </td>
                                 </tr>
                             @empty
@@ -40,20 +33,6 @@
                                 <td colspan="3">No data found</td>
                             </tr>
                             @endforelse
-{{-- 
-                            <?php if($data){
-                                    foreach($data as $d){
-                            ?>
-                            <tr>
-                                <td>{{$d->id}}</td>
-                                <td>{{$d->name}}</td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            <?php
-                                    }
-                            } ?> --}}
                         </table>
                     </div>
                 </div>
