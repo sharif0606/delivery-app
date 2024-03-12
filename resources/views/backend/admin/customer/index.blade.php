@@ -1,6 +1,6 @@
-@extends()
+@extends('backend.master')
 
-@section(content)
+@section('content')
 
 <section id="home">
     <div class="content">
@@ -42,3 +42,4 @@
         </div>
     </div>
 </main>
+@endsection

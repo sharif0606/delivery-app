@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\HomeController as home;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\Backend\DashboardController as dash;
 use App\Http\Controllers\Backend\TypeController as dtype;
+use App\Http\Controllers\Backend\CustomerController as acustomer;
 
 use App\Http\Controllers\Backend\LocationController as dloc;
 use App\Http\Controllers\Backend\OrderController as order;
@@ -52,6 +53,7 @@ Route::get('/sign-out', [auth::class,'logOut'])->name('logout');
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
         Route::get('/dashboard', [dash::class,'adminDashboard'])->name('admin.dashboard');
+        Route::get('/customer', [acustomer::class,'index'])->name('admin.customer.index');
         /* settings */
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
