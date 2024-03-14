@@ -14,6 +14,8 @@
                                     <th>Deliveryman ID</th>
                                     <th>Deliveryman Name</th>
                                     <th>Deliveryman Email</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             
@@ -23,6 +25,19 @@
                                     <th>{{$c->id}}</th>
                                     <td>{{$c->name}}</td>
                                     <td>{{$c->email}}</td>
+                                    <td>
+                                        <a href=# class="btn btn-info">
+                                            <i class="lni lni-pencil"></i>
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form onsubmit="return confirm('Are you sure?')" action=# method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
