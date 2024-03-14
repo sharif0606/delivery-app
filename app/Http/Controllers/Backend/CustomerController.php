@@ -13,8 +13,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-    
-        $data=User::where('role_id',2)->paginate();
+        $data=User::where('role_id',2)->paginate(10);
         return view('backend.admin.customer.index',compact('data'));
         //
     }
@@ -32,7 +31,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            User::create($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.customer.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -46,24 +50,34 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return view('backend.admin.customer.edit',compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        try{
+            User::create($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.customer.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        try{
+            $user->delete();
+            return redirect()->route(request()->session()->get('roleIdentity').'.location.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 }
