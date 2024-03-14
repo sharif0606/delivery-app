@@ -59,6 +59,12 @@
                         <span>Deliveryman List</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Order List</span>
+                    </a>
+                </li>
 
             </ul>
 

@@ -55,10 +55,10 @@ Route::get('/sign-out', [auth::class,'logOut'])->name('logout');
 Route::group(['middleware'=>isAdmin::class],function(){
     Route::prefix('admin')->group(function(){
         Route::get('/dashboard', [dash::class,'adminDashboard'])->name('admin.dashboard');
-        Route::get('/CustomerList', [acustomer::class,'index'])->name('admin.customer.index');
-        Route::get('/DeliverymanList', [a_dvman::class,'index'])->name('admin.deliveryman.index');
 
         /* settings */
+        Route::resource('customer',acustomer::class,['as'=>'admin']);
+        Route::resource('deliveryman',a_dvman::class,['as'=>'admin']);
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
         Route::resource('cost_settings',cost_settings::class,['as'=>'admin']);

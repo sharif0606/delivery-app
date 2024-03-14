@@ -50,18 +50,20 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user=User::find($id);
         return view('backend.admin.customer.edit',compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         try{
-            User::create($request->all());
+            $user=User::find($id);
+            $user->update($request->all());
             return redirect()->route(request()->session()->get('roleIdentity').'.customer.index');
         }catch(\Exception $e){
             dd($e);

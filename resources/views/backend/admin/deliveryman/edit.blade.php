@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card formi">
-                    <div class="card-header">Cost Selects</div>
+                    <div class="card-header">Update delivery man</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.customer.update',$user->id)}}">
+                        <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.deliveryman.update',$user->id)}}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -19,6 +19,10 @@
                             <div class="form-group">
                                 <label for="name">Email</label>
                                 <input type="text" class="form-control" id="type" name="email" value="{{old('email',$user->email)}}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" name="password">
                             </div>
 
                             <button type="submit" class="btn btn-primary"> Submit </button>
