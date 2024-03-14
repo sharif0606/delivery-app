@@ -13,7 +13,8 @@ class DeliveryManController extends Controller
      */
     public function index()
     {
-        $data=User::where('role_id',3)->paginate();
+        $data=User::where('role_id',3)->paginate(10);
+        return view('backend.admin.deliveryman.index',compact('data'));
         //
     }
 
@@ -22,6 +23,8 @@ class DeliveryManController extends Controller
      */
     public function create()
     {
+        
+
         //
     }
 

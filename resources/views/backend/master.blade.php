@@ -49,18 +49,17 @@
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.customer.index')}}" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>customer</span>
+                        <span>Customer List</span>
                     </a>
                 </li>
-
-
 
                 <li class="sidebar-item">
-                    <a href="index.php" class="sidebar-link">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.index')}}" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Delivery Boy</span>
+                        <span>Deliveryman List</span>
                     </a>
                 </li>
+
             </ul>
 
 

@@ -39,8 +39,7 @@
                                     <td>{{$d->weight_cost}}</td>
                                     <td>
                                         <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.edit',$d->id)}}" class="btn btn-info">
-                                            <i class="lni lni-pencil"></i>
-                                        Edit
+                                            <i class="lni lni-pencil"></i>Edit
                                         </a>
                                         <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.cost_settings.destroy',$d->id)}}" method="post">
                                             @csrf
