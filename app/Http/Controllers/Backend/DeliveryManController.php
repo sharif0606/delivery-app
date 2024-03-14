@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class DeliveryManController extends Controller
 {
@@ -23,9 +24,7 @@ class DeliveryManController extends Controller
      */
     public function create()
     {
-        
-
-        //
+        return view('backend.admin.deliveryman.create');
     }
 
     /**
@@ -33,7 +32,17 @@ class DeliveryManController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'role_id' => 3,
+                'password' => Hash::make($request->password)
+            ]);
+            return redirect()->route(request()->session()->get('roleIdentity').'.deliveryman.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -49,7 +58,8 @@ class DeliveryManController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user=User::find($id);
+        return view('backend.admin.deliveryman.edit',compact('user'));
     }
 
     /**
@@ -57,7 +67,18 @@ class DeliveryManController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try{
+            $user=User::find($id);
+            $user->name=$request->name;
+            $user->email=$request->email;
+            if($request->password){
+                $user->password=Hash::make($request->password);
+            }
+            $user->save();
+            return redirect()->route(request()->session()->get('roleIdentity').'.deliveryman.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**

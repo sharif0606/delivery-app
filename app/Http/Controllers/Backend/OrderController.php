@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 
+use App\Models\Location;
 use App\Models\Order;
+use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data=Order::latest()->paginate(10);
+        $data=Order::where('status',0)->latest()->paginate(10);
         return view('backend.admin.order.index',compact('data'));
     }
 
@@ -46,7 +49,10 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+        $delivaryman=User::where('role_id',3)->get();
+        $location=Location::orderBy('name')->get();
+        $type=Type::orderBy('name')->get();
+        return view('backend.admin.order.edit',compact('delivaryman','location','type'));
     }
 
     /**

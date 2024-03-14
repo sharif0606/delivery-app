@@ -29,4 +29,20 @@ class Order extends Model
     	'delivery_date',
     	'status',
     ];
+
+	public function pickupLocation(){
+        return $this->belongsTo(Location::class,'pickup_location','id');
+    }
+    public function deliveryLocation(){
+        return $this->belongsTo(Location::class,'delivery_location','id');
+    }
+    public function docType(){
+        return $this->belongsTo(Type::class,'type_id','id');
+    }
+    public function customer(){
+        return $this->belongsTo(User::class,'customer_id','id');
+    }
+    public function deliveryMan(){
+        return $this->belongsTo(User::class,'delivery_boy_id','id');
+    }
 }

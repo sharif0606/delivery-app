@@ -8,6 +8,10 @@
                 <h3 class="fw-bold fs-4 my-3">Deliveryman List</h3>
                 <div class="row">
                     <div class="col-12">    
+                        <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.create')}}" class="btn btn-primary">
+                            <i class="lni lni-agenda"></i>
+                            Add New
+                        </a>
                         <table class="table table-striped">
                             <thead>
                                 <tr class="highlight">
@@ -15,7 +19,7 @@
                                     <th>Deliveryman Name</th>
                                     <th>Deliveryman Email</th>
                                     <th></th>
-                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             
@@ -25,14 +29,13 @@
                                     <th>{{$c->id}}</th>
                                     <td>{{$c->name}}</td>
                                     <td>{{$c->email}}</td>
+                                    <td></td>
                                     <td>
-                                        <a href=# class="btn btn-info">
+                                        <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.edit',$c->id)}}" class="btn btn-info">
                                             <i class="lni lni-pencil"></i>
                                             Edit
                                         </a>
-                                    </td>
-                                    <td>
-                                        <form onsubmit="return confirm('Are you sure?')" action=# method="post">
+                                        <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.deliveryman.destroy',$c->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
