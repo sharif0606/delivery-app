@@ -16,6 +16,9 @@ use App\Http\Controllers\Backend\DeliveryCostCalculatorController as cost_settin
 /* customer */
 use App\Http\Controllers\Customer\OrderController as corder;
 
+/* Deliveryman */
+use App\Http\Controllers\Deliveryman\OrderController as dorder;
+
 
 
 
@@ -61,6 +64,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('deliveryman',a_dvman::class,['as'=>'admin']);
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
+        Route::get('order/check_rate',[corder::class,'check_rate'])->name('admin.order.check_rate');
+        Route::get('order_accepted',[order::class,'order_accepted'])->name('admin.order_accepted');
         Route::resource('cost_settings',cost_settings::class,['as'=>'admin']);
         Route::resource('location',dloc::class,['as'=>'admin']);
 
@@ -71,7 +76,9 @@ Route::group(['middleware'=>isAdmin::class],function(){
 Route::group(['middleware'=>isDelivaryMan::class],function(){
     Route::prefix('deliveryman')->group(function(){
         Route::get('/dashboard', [dash::class,'deliverymanDashboard'])->name('deliveryman.dashboard');
-        
+        Route::get('order',[dorder::class,'index'])->name('deliveryman.order.index');
+        Route::get('order/{id}/track',[dorder::class,'track'])->name('deliveryman.order.track');
+        Route::post('order/track_store/{id}',[dorder::class,'store'])->name('deliveryman.order.track.store');
         /* settings */
     });
 });
@@ -84,6 +91,7 @@ Route::group(['middleware'=>isCustomer::class],function(){
         Route::get('order/create',[corder::class,'create'])->name('customer.order.create');
         Route::get('order/check_rate',[corder::class,'check_rate'])->name('customer.order.check_rate');
         Route::post('order/store',[corder::class,'store'])->name('customer.order.store');
+        Route::get('order/{id}/track',[corder::class,'track'])->name('customer.order.track');
 
     });
 });

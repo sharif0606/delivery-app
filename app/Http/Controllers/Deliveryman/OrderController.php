@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers\Deliveryman;
+
+use App\Http\Controllers\Controller;
+use App\Models\OrderTracking;
+use Illuminate\Http\Request;
+use App\Models\Location;
+use App\Models\Type;
+use App\Models\Order;
+use DB;
+class OrderController extends Controller
+{
+    public function index()
+    {
+        $user = request()->session()->get('userId');
+        $data = Order::where('delivery_boy_id', $user)->latest()->paginate(10);
+        return view('backend.deliveryman.order.index', compact('data'));
+    }
+    public function track( $id)
+    {
+        $order=Order::find($id);
+        return view('backend.deliveryman.order.track',compact('order'));
+    }
+
+    public function store(Request $request,$id){
+        try{
+            $input=$request->all();
+            $input['order_id']=$id;
+            OrderTracking::create($input);
+            
+            $order=Order::find($id);
+            $order->status=$request->status;
+            $order->save();
+
+            return redirect()->route(request()->session()->get('roleIdentity').'.order.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
+    }
+}
+

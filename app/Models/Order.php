@@ -45,4 +45,7 @@ class Order extends Model
     public function deliveryMan(){
         return $this->belongsTo(User::class,'delivery_boy_id','id');
     }
+    public function track(){
+        return $this->hasMany(OrderTracking::class,'order_id','id');
+    }
 }

@@ -18,6 +18,12 @@ class OrderController extends Controller
         $orders = Order::where('customer_id', $user)->latest()->paginate(10);
         return view('backend.customer.order.index', compact('orders'));
     }
+
+    public function track( $id)
+    {
+        $order=Order::find($id);
+        return view('backend.customer.order.track',compact('order'));
+    }
     public function create()
     {
         $location=Location::orderBy('name')->get();
