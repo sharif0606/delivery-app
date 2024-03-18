@@ -11,7 +11,6 @@ class OrderTracking extends Model
 
      
     protected $fillable = [
-         
         'order_id',
     	'note',
     	'track_date',

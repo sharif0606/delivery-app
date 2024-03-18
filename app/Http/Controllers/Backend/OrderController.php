@@ -19,6 +19,11 @@ class OrderController extends Controller
         $data=Order::where('status',0)->latest()->paginate(10);
         return view('backend.admin.order.index',compact('data'));
     }
+    public function order_accepted()
+    {
+        $data=Order::where('status',2)->latest()->paginate(10);
+        return view('backend.admin.order.accepted',compact('data'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +57,7 @@ class OrderController extends Controller
         $delivaryman=User::where('role_id',3)->get();
         $location=Location::orderBy('name')->get();
         $type=Type::orderBy('name')->get();
-        return view('backend.admin.order.edit',compact('delivaryman','location','type'));
+        return view('backend.admin.order.edit',compact('delivaryman','location','type','order'));
     }
 
     /**
@@ -60,7 +65,12 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        try{
+            $order->update($request->all());
+            return redirect()->route(request()->session()->get('roleIdentity').'.order.index');
+        }catch(\Exception $e){
+            dd($e);
+        }
     }
 
     /**

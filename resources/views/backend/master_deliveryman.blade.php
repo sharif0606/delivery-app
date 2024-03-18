@@ -24,54 +24,19 @@
                 </div>
             </div>
             <ul class="sidebar-nav">
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.type.index')}}" class="sidebar-link">
-                        <i class="lni lni-agenda"></i>
-                        <span>Document Type</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.location.index')}}" class="sidebar-link">
-                        <i class="lni lni-travel"></i>
-                        <span>Locations</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Cost Settings</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.customer.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Customer List</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Deliveryman List</span>
-                    </a>
-                </li>
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
                         <i class="lni lni-user"></i>
                         <span>Order List</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
                         <i class="lni lni-cart"></i>
-                        <span>Accepted Order</span>
+                        <span>New Order</span>
                     </a>
                 </li>
-
             </ul>
 
 

@@ -74,11 +74,11 @@
                             </div>
                             <div class="col-sm-6">
                                 <label for="product">Product:</label>
-                                <input class="form-control" type="text" id="product" name="product">
+                                <input class="form-control" type="text" id="product" name="product" required>
                             </div>
                             <div class="col-sm-6">
                                 <label for="price">Product Price:</label>
-                                <input class="form-control" type="text" id="price" name="price">
+                                <input class="form-control" type="text" id="price" name="price" required>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
