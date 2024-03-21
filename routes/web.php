@@ -47,6 +47,7 @@ use App\Http\Middleware\isDelivaryMan;
 
 Route::get('/', [home::class,'index'])->name('home');
 Route::get('/order-track', [home::class,'orderTrack'])->name('orderTrack');
+Route::get('/service', [home::class,'service'])->name('service');
 
 /* auth route*/
 Route::get('/log-in', [auth::class,'loggedin'])->name('loggedin');
