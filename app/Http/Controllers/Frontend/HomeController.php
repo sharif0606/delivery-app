@@ -14,4 +14,8 @@ class HomeController extends Controller
     public function orderTrack(){
         return view('frontend.ordertrack');
     }
+    public function service(){
+        return view('frontend.service');
+    }
+
 }
