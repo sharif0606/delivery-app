@@ -41,7 +41,7 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
+                    <i class="lni lni-coin"></i>
                         <span>Cost Settings</span>
                     </a>
                 </li>
@@ -55,19 +55,19 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
+                    <i class="lni lni-delivery"></i>
                         <span>Deliveryman List</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
+                    <i class="lni lni-cart"></i>
                         <span>Order List</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
-                        <i class="lni lni-cart"></i>
+                    <i class="lni lni-thumbs-up"></i>
                         <span>Accepted Order</span>
                     </a>
                 </li>

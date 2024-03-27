@@ -85,8 +85,9 @@
                                     <label for="weight">Weight:</label>
                                     <input type="number" value="{{old('weight')}}" class="form-control" id="weight" name="weight">
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="get_cost()">Get Cost</button>
+
                             </div>
+                            <div style="margin-top: 20px;">
                             <div class="col-sm-6">
                                 <table class="table">
                                     <tr>
@@ -117,7 +118,9 @@
                                         </td>
                                     </tr>
                                 </table>
+                            <button type="button" class="btn btn-primary" onclick="get_cost()">Get Cost</button>
                             </div>
+                        </div>
                             <div class="col-sm-12">
                                 <label for="note">Note:</label>
                                 <textarea class="form-control" id="note" name="note"></textarea>
