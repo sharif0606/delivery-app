@@ -2,17 +2,19 @@
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card formi">
-                <div class="card-header">Order</div>
-                <div class="card-body">
-                   
-                    <a href="{{route(request()->session()->get('roleIdentity').'.type.create')}}" class="btn btn-primary">
+<main class="content px-3 py-4">
+    <div class="container-fluid">
+        <div class="mb-3">
+            <div class="fw-bold fs-4 my-3">Order</div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.type.create')}}"
+                        class="btn btn-primary">
                         <i class="lni lni-agenda"></i>
                         Add New
                     </a>
+
+                    <br><br>
                     <table class="table table-striped">
                         <thead>
                             <tr class="highlight">
@@ -29,32 +31,33 @@
                         </thead>
                         <tbody>
                             @forelse ($data as $d)
-                                <tr>
-                                    <th scope="row">{{$d->id}}</th>
-                                    <td>{{$d->customer?->name}}</td>
-                                    <td>{{$d->deliveryMan?->name}}</td>
-                                    <td>{{$d->pickup_date}}</td>
-                                    <td>{{$d->pickupLocation?->name}} <br> {{$d->pickup_address}}</td>
-                                    <td>{{$d->deliveryLocation?->name}} <br> {{$d->delivery_address}}</td>
-                                    <td>{{$d->customer?->email}}</td>
-                                    <td>{{$status[$d->status]}}</td>
-                                    <td>
-                                        <a href="{{route(request()->session()->get('roleIdentity').'.order.edit',$d->id)}}" class="btn btn-info">
-                                            <i class="lni lni-pencil"></i>
-                                            Edit
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <th scope="row">{{$d->id}}</th>
+                                <td>{{$d->customer?->name}}</td>
+                                <td>{{$d->deliveryMan?->name}}</td>
+                                <td>{{$d->pickup_date}}</td>
+                                <td>{{$d->pickupLocation?->name}} <br> {{$d->pickup_address}}</td>
+                                <td>{{$d->deliveryLocation?->name}} <br> {{$d->delivery_address}}</td>
+                                <td>{{$d->customer?->email}}</td>
+                                <td>{{$status[$d->status]}}</td>
+                                <td>
+                                    <a href="{{route(request()->session()->get('roleIdentity').'.order.edit',$d->id)}}"
+                                        class="btn btn-info">
+                                        <i class="lni lni-pencil"></i>
+                                        Edit
+                                    </a>
+                                </td>
+                            </tr>
                             @empty
-                                
+
                             @endforelse
-                            
+
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
 
 @endsection
