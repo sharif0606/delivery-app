@@ -20,7 +20,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">Courierpro</a>
+                    <a href="{{route('admin.dashboard')}}">Courierpro</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
