@@ -12,6 +12,7 @@
                             <i class="lni lni-agenda"></i>
                             Add New
                         </a>
+                        <br><br>
                         <table class="table table-striped">
                             <thead>
                                 <tr class="highlight">

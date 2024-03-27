@@ -2,7 +2,7 @@
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
-<div class="container">
+<div class="content px-3 py-4">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card formi">
@@ -13,6 +13,7 @@
                         <i class="lni lni-agenda"></i>
                         Add New
                     </a>
+                    <br><br>
                     <table class="table table-striped">
                         <thead>
                             <tr class="highlight">
