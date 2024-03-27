@@ -40,7 +40,6 @@
                                         <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i>
                                             Delete</button>
                                     </form>
-
                                 </td>
                             </tr>
                             @empty
