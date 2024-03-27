@@ -2,17 +2,14 @@
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
-<div class="content px-3 py-4">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card formi">
-                <div class="card-header">Order</div>
-                <div class="card-body">
-                   
-                    <a href="{{route(request()->session()->get('roleIdentity').'.type.create')}}" class="btn btn-primary">
-                        <i class="lni lni-agenda"></i>
-                        Add New
-                    </a>
+@section('content')
+<main class="content px-3 py-4">
+    <div class="container-fluid">
+        <div class="mb-3">
+                <div class="fw-bold fs-4 my-3">Orders</div>
+                <div class="row">
+                   <div class="col-12">
+                    
                     <br><br>
                     <table class="table table-striped">
                         <thead>
@@ -56,6 +53,6 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 
 @endsection
