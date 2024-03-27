@@ -4,7 +4,7 @@
 <div class="content px-3 py-4">
     <div class="container-fluid">
         <div class="mb-3">
-            <h3 class="fw-bold fs-4 my-3">Delivery locations</h3>
+            <h3 class="fw-bold fs-4 my-3">Document Type</h3>
             <div class="row">
                 <div class="col-12">
                     <a href="{{route(request()->session()->get('roleIdentity').'.type.create')}}"
