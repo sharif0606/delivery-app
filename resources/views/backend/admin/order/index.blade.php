@@ -6,7 +6,7 @@
 <main class="content px-3 py-4">
     <div class="container-fluid">
         <div class="mb-3">
-                <div class="fw-bold fs-4 my-3">Orders</div>
+                <div class="fw-bold fs-4 my-3">Pending orders</div>
                 <div class="row">
                    <div class="col-12">
                     

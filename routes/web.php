@@ -67,6 +67,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('order',order::class,['as'=>'admin']);
         Route::get('order/check_rate',[corder::class,'check_rate'])->name('admin.order.check_rate');
         Route::get('order_accepted',[order::class,'order_accepted'])->name('admin.order_accepted');
+        Route::get('order_processing',[order::class,'order_processing'])->name('admin.order_processing');
+        Route::get('order_completed',[order::class,'order_completed'])->name('admin.order_completed');
         Route::resource('cost_settings',cost_settings::class,['as'=>'admin']);
         Route::resource('location',dloc::class,['as'=>'admin']);
 
