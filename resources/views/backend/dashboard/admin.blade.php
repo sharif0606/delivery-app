@@ -13,10 +13,13 @@
                             <h5 class="mb-2 fw-bold">
                                 Total Orders
                             </h5>
+
+                            <div class="mb-0">
+                            </div>
                             <p class="mb-2 fw-bold">
-                                {{$totalOrders}}
+                            {{$totalOrders}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -24,12 +27,13 @@
                     <div class="card  border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
+                                Total Customer
                                 Customer Accounts
                             </h5>
                             <p class="mb-2 fw-bold">
                                 {{$totalUsers}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -37,18 +41,20 @@
                     <div class="card border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Deliveryman Available
+                                Total Deliveryman
                             </h5>
+                            <p class="mb-2 fw-bold">
+                                </h5>
                             <p class="mb-2 fw-bold">
                                 {{$totalDeliveryman}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
 </main>
