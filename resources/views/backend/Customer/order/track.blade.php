@@ -1,4 +1,4 @@
-@extends('backend.master_deliveryman')
+@extends('backend.master_customer')
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp

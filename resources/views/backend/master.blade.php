@@ -10,6 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('Admin/style.css')}}">
+    <style media="print">
+        #sidebar, .footer, .no-print{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,11 +46,7 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.index')}}" class="sidebar-link">
-<<<<<<< HEAD
                     <i class="lni lni-coin"></i>
-=======
-                        <i class="lni lni-coin"></i>
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Cost Settings</span>
                     </a>
                 </li>
@@ -59,34 +60,21 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.index')}}" class="sidebar-link">
-<<<<<<< HEAD
                     <i class="lni lni-delivery"></i>
-=======
-                        <i class="lni lni-delivery"></i>
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Deliveryman List</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
-<<<<<<< HEAD
                     <i class="lni lni-cart"></i>
                         <span>Order List</span>
-=======
-                        <i class="lni lni-question-circle"></i>
-                        <span>Pending Orders</span>
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
-<<<<<<< HEAD
                     <i class="lni lni-thumbs-up"></i>
-=======
-                        <i class="lni lni-thumbs-up"></i>
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Accepted Order</span>
                     </a>
                 </li>

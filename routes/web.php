@@ -65,7 +65,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('deliveryman',a_dvman::class,['as'=>'admin']);
         Route::resource('type',dtype::class,['as'=>'admin']);
         Route::resource('order',order::class,['as'=>'admin']);
-        Route::get('order/check_rate',[corder::class,'check_rate'])->name('admin.order.check_rate');
+        Route::get('order-invoice/{order}',[order::class,'invoice'])->name('admin.order_invoice');
+        Route::get('corder/check_rate',[corder::class,'check_rate'])->name('admin.order.check_rate');
         Route::get('order_accepted',[order::class,'order_accepted'])->name('admin.order_accepted');
         Route::get('order_processing',[order::class,'order_processing'])->name('admin.order_processing');
         Route::get('order_completed',[order::class,'order_completed'])->name('admin.order_completed');
@@ -86,6 +87,7 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
         Route::get('order_accepted',[dorder::class,'order_accepted'])->name('deliveryman.order_accepted');
         Route::get('order_processing',[dorder::class,'order_processing'])->name('deliveryman.order_processing');
         Route::get('order_completed',[dorder::class,'order_completed'])->name('deliveryman.order_completed');
+        Route::get('order-invoice/{order}',[dorder::class,'invoice'])->name('deliveryman.order_invoice');
         /* settings */
     });
 });
@@ -95,6 +97,7 @@ Route::group(['middleware'=>isCustomer::class],function(){
         Route::get('/dashboard', [dash::class,'customerDashboard'])->name('customer.dashboard');
         /* settings */
         Route::get('order',[corder::class,'index'])->name('customer.order.index');
+        Route::get('order-invoice/{order}',[corder::class,'invoice'])->name('customer.order_invoice');
         Route::get('order/create',[corder::class,'create'])->name('customer.order.create');
         Route::get('order/check_rate',[corder::class,'check_rate'])->name('customer.order.check_rate');
         Route::post('order/store',[corder::class,'store'])->name('customer.order.store');

@@ -59,6 +59,13 @@ class OrderController extends Controller
     {
         //
     }
+    /**
+     * Display the specified resource.
+     */
+    public function invoice(Order $order)
+    {
+        return view('backend.admin.order.invoice',compact('order'));
+    }
 
     /**
      * Show the form for editing the specified resource.
