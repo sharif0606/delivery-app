@@ -67,6 +67,8 @@ Route::group(['middleware'=>isAdmin::class],function(){
         Route::resource('order',order::class,['as'=>'admin']);
         Route::get('order/check_rate',[corder::class,'check_rate'])->name('admin.order.check_rate');
         Route::get('order_accepted',[order::class,'order_accepted'])->name('admin.order_accepted');
+        Route::get('order_processing',[order::class,'order_processing'])->name('admin.order_processing');
+        Route::get('order_completed',[order::class,'order_completed'])->name('admin.order_completed');
         Route::resource('cost_settings',cost_settings::class,['as'=>'admin']);
         Route::resource('location',dloc::class,['as'=>'admin']);
 
@@ -80,6 +82,10 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
         Route::get('order',[dorder::class,'index'])->name('deliveryman.order.index');
         Route::get('order/{id}/track',[dorder::class,'track'])->name('deliveryman.order.track');
         Route::post('order/track_store/{id}',[dorder::class,'store'])->name('deliveryman.order.track.store');
+
+        Route::get('order_accepted',[dorder::class,'order_accepted'])->name('deliveryman.order_accepted');
+        Route::get('order_processing',[dorder::class,'order_processing'])->name('deliveryman.order_processing');
+        Route::get('order_completed',[dorder::class,'order_completed'])->name('deliveryman.order_completed');
         /* settings */
     });
 });

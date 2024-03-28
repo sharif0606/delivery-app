@@ -80,6 +80,10 @@
                                 <label for="price">Product Price:</label>
                                 <input class="form-control" type="text" id="price" name="price" required>
                             </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="weight">Weight:</label>

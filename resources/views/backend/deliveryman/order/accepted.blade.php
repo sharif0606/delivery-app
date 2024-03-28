@@ -1,4 +1,4 @@
-@extends('backend.master')
+@extends('backend.master_deliveryman')
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
@@ -36,7 +36,7 @@
                                 <td>{{$d->customer?->email}}</td>
                                 <td>{{$status[$d->status]}}</td>
                                 <td>
-                                    <a href="{{route(request()->session()->get('roleIdentity').'.order.edit',$d->id)}}"
+                                    <a href="{{route(request()->session()->get('roleIdentity').'.order.track',$d->id)}}"
                                         class="btn btn-info">
                                         <i class="lni lni-pencil"></i>
                                         Edit

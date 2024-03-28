@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($data as $c)
+                            @foreach($data as $c)
                             <tr>
                                 <th>{{$c->id}}</th>
                                 <td>{{$c->name}}</td>
@@ -32,16 +32,15 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <form onsubmit="return confirm('Are you sure?')" action=# method="post">
+                                    <form onsubmit="return confirm('Are you sure?')" action="{{route(request()->session()->get('roleIdentity').'.customer.destroy',$c->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"> <i class="lni lni-trash-can"></i> Delete</button>
                                     </form>
                                 </td>
                             </tr>
-                            @empty
 
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

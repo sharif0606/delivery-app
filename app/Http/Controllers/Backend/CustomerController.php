@@ -77,7 +77,7 @@ class CustomerController extends Controller
     {
         try{
             $user->delete();
-            return redirect()->route(request()->session()->get('roleIdentity').'.location.index');
+            return redirect()->route(request()->session()->get('roleIdentity').'.customer.index');
         }catch(\Exception $e){
             dd($e);
         }

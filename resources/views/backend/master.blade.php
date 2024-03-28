@@ -20,7 +20,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">Courierpro</a>
+                    <a href="{{route('admin.dashboard')}}">Courierpro</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
@@ -41,7 +41,11 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.cost_settings.index')}}" class="sidebar-link">
+<<<<<<< HEAD
                     <i class="lni lni-coin"></i>
+=======
+                        <i class="lni lni-coin"></i>
+>>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Cost Settings</span>
                     </a>
                 </li>
@@ -55,23 +59,51 @@
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.deliveryman.index')}}" class="sidebar-link">
+<<<<<<< HEAD
                     <i class="lni lni-delivery"></i>
+=======
+                        <i class="lni lni-delivery"></i>
+>>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Deliveryman List</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
+<<<<<<< HEAD
                     <i class="lni lni-cart"></i>
                         <span>Order List</span>
+=======
+                        <i class="lni lni-question-circle"></i>
+                        <span>Pending Orders</span>
+>>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
+<<<<<<< HEAD
                     <i class="lni lni-thumbs-up"></i>
+=======
+                        <i class="lni lni-thumbs-up"></i>
+>>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
                         <span>Accepted Order</span>
                     </a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order_processing')}}" class="sidebar-link">
+                        <i class="lni lni-reload"></i>
+                        <span>Processing Order</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order_completed')}}" class="sidebar-link">
+                        <i class="lni lni-checkmark-circle"></i>
+                        <span>Completed Order</span>
+                    </a>
+                </li>
             </ul>
 
 
@@ -109,7 +141,7 @@
                     <div class="row text-body-secondary">
                         <div class="col-6 text-start ">
                             <a class="text-body-secondary" href=" #">
-                                <strong>CodzSwod</strong>
+                                <strong>Courierpro</strong>
                             </a>
                         </div>
                         <div class="col-6 text-end text-body-secondary d-none d-md-block">

@@ -15,24 +15,25 @@
             <h2>Log In</h2>
             <div class="inputbox">
                 <input type="email" required="required" name="email" value="{{old('email')}}">
-                @if($errors->has('email'))
-                    <small class="d-block text-danger">
-                        {{$errors->first('email')}}
-                    </small>
-                @endif
                 <span>Email</span>
                 <i></i>
             </div>
+            @if($errors->has('email'))
+                <small class="d-block text-danger">
+                    {{$errors->first('email')}}
+                </small>
+            @endif
             <div class="inputbox">
                 <input type="password" required="required" name="password">
-                @if($errors->has('password'))
-                    <small class="d-block text-danger">
-                        {{$errors->first('password')}}
-                    </small>
-                @endif
                 <span>Password</span>
                 <i></i>
             </div>
+            @if($errors->has('password'))
+                <small class="d-block text-danger">
+                    {{$errors->first('password')}}
+                </small>
+            @endif
+
             <div class="links">
                 <a href="{{route('signin')}}">SignUp</a>
             </div>

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Deliveryman Panel</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('Admin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/styleD.css')}}">
 </head>
 
 <body>
@@ -20,17 +20,48 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">Courierpro</a>
+                    <a href="{{route(request()->session()->get('roleIdentity').'.dashboard')}}">Courierpro</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
+                
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
+<<<<<<< HEAD
                     <i class="lni lni-cart"></i>
                         <span>Order List</span>
                     </a>
                 </li>
 
+=======
+                        <i class="lni lni-question-circle"></i>
+                        <span>Pending Orders</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
+                        <i class="lni lni-thumbs-up"></i>
+                        <span>Accepted Order</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order_processing')}}" class="sidebar-link">
+                        <i class="lni lni-reload"></i>
+                        <span>Processing Order</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="{{route(request()->session()->get('roleIdentity').'.order_completed')}}" class="sidebar-link">
+                        <i class="lni lni-checkmark-circle"></i>
+                        <span>Completed Order</span>
+                    </a>
+                </li>
+
+                
+>>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
             </ul>
 
 
@@ -67,8 +98,8 @@
                 <div class="container-fluid">
                     <div class="row text-body-secondary">
                         <div class="col-6 text-start ">
-                            <a class="text-body-secondary" href=" #">
-                                <strong>CodzSwod</strong>
+                            <a class="text-body-secondary" href=" {{route(request()->session()->get('roleIdentity').'.dashboard')}}">
+                                <strong>Courierpro</strong>
                             </a>
                         </div>
                         <div class="col-6 text-end text-body-secondary d-none d-md-block">

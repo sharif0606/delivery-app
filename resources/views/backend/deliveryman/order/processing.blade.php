@@ -1,14 +1,14 @@
-@extends('backend.master')
+@extends('backend.master_deliveryman')
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
 <main class="content px-3 py-4">
     <div class="container-fluid">
         <div class="mb-3">
-            <div class="fw-bold fs-4 my-3">Accepted order</div>
+            <div class="fw-bold fs-4 my-3">Processing order</div>
             <div class="row">
                 <div class="col-12">
-                    
+
                     <br><br>
                     <table class="table table-striped">
                         <thead>
@@ -36,7 +36,7 @@
                                 <td>{{$d->customer?->email}}</td>
                                 <td>{{$status[$d->status]}}</td>
                                 <td>
-                                    <a href="{{route(request()->session()->get('roleIdentity').'.order.edit',$d->id)}}"
+                                    <a href="{{route(request()->session()->get('roleIdentity').'.order.track',$d->id)}}"
                                         class="btn btn-info">
                                         <i class="lni lni-pencil"></i>
                                         Edit
