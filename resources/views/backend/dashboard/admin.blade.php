@@ -16,7 +16,7 @@
 
                             <div class="mb-0">
                             </div>
-                            <p>
+                            <p class="mb-2 fw-bold">
                             {{$totalOrders}}
                             </p>
 
