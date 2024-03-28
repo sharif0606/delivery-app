@@ -13,18 +13,13 @@
                             <h5 class="mb-2 fw-bold">
                                 Total Orders
                             </h5>
-                            <p class="mb-2 fw-bold">
-                                " "
-                            </p>
+
                             <div class="mb-0">
-                                
-                                <span class=" fw-bold">
-                                    50
-                                </span>
                             </div>
-                                {{$totalOrders}}
+                            <p>
+                            {{$totalOrders}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -38,7 +33,7 @@
                             <p class="mb-2 fw-bold">
                                 {{$totalUsers}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -49,19 +44,17 @@
                                 Total Deliveryman
                             </h5>
                             <p class="mb-2 fw-bold">
-                                10
-                                Deliveryman Available
-                            </h5>
+                                </h5>
                             <p class="mb-2 fw-bold">
                                 {{$totalDeliveryman}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
 </main>
