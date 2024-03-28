@@ -10,17 +10,15 @@
                     <div class="card border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Total Due Delivery
+                                Total Orders
                             </h5>
                             <p class="mb-2 fw-bold">
-                                50
+                                " "
                             </p>
                             <div class="mb-0">
-                                <span class="badge text-success me-2">
-                                    +9.0%
-                                </span>
+                                
                                 <span class=" fw-bold">
-                                    Since Last Month
+                                    50
                                 </span>
                             </div>
                         </div>
@@ -30,7 +28,7 @@
                     <div class="card  border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Confirmed delivery
+                                Total Customer
                             </h5>
                             <p class="mb-2 fw-bold">
                                 30
@@ -50,10 +48,10 @@
                     <div class="card border-0">
                         <div class="card-body py-4">
                             <h5 class="mb-2 fw-bold">
-                                Memebers Progress
+                                Total Deliveryman
                             </h5>
                             <p class="mb-2 fw-bold">
-                                $72,540
+                                10
                             </p>
                             <div class="mb-0">
                                 <span class="badge text-success me-2">
