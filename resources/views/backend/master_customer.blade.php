@@ -30,14 +30,14 @@
                 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
-                        <i class="lni lni-user"></i>
+                    <i class="lni lni-cart"></i>
                         <span>Order List</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.create')}}" class="sidebar-link">
-                        <i class="lni lni-cart"></i>
+                    <i class="lni lni-popup"></i>
                         <span>New Order</span>
                     </a>
                 </li>
