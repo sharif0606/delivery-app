@@ -79,6 +79,10 @@ Route::group(['middleware'=>isDelivaryMan::class],function(){
         Route::get('order',[dorder::class,'index'])->name('deliveryman.order.index');
         Route::get('order/{id}/track',[dorder::class,'track'])->name('deliveryman.order.track');
         Route::post('order/track_store/{id}',[dorder::class,'store'])->name('deliveryman.order.track.store');
+
+        Route::get('order_accepted',[dorder::class,'order_accepted'])->name('deliveryman.order_accepted');
+        Route::get('order_processing',[dorder::class,'order_processing'])->name('deliveryman.order_processing');
+        Route::get('order_completed',[dorder::class,'order_completed'])->name('deliveryman.order_completed');
         /* settings */
     });
 });

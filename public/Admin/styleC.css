@@ -39,7 +39,7 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #0e2238;
+    background-color: #0e3810;
     display: flex;
     flex-direction: column;
 }
@@ -124,7 +124,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    background-color: #0e2238;
+    background-color: #0e3810;
     padding: 0;
     min-width: 15rem;
     display: none;
@@ -179,6 +179,21 @@ a.sidebar-link:hover {
 
 
 }
+.head{
+    font-size: 80px;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    justify-self: justify;
+    align-items: center;
+    
+}
+
+.card-header{
+    font-size: large;
+    background-color: #1b3d0f;
+    color: #FFF;
+}
+
 .text-success{
     background-color: #71c554;
     padding: 0.25rem, .35rem;
@@ -195,7 +210,7 @@ a.sidebar-link:hover {
 }
 
 tr.highlight th{
-    background-color: #293b5f;
+    background-color: rgb(65, 95, 41);
     color:#fff;
 
 }
@@ -247,11 +262,9 @@ footer{
     margin-top: 10px;
     
 }
-.head{
-    font-size: 80px;
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
-    justify-self: justify;
-    align-items: center;
-    
+
+label{
+    Color: rgb(26, 126, 26);
 }
+
+

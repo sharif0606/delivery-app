@@ -17,6 +17,22 @@ class OrderController extends Controller
         $data = Order::where('delivery_boy_id', $user)->latest()->paginate(10);
         return view('backend.deliveryman.order.index', compact('data'));
     }
+   
+    public function order_accepted()
+    {
+        $data=Order::where('status',1)->latest()->paginate(10);
+        return view('backend.deliveryman.order.accepted',compact('data'));
+    }
+    public function order_processing()
+    {
+        $data=Order::where('status',2)->latest()->paginate(10);
+        return view('backend.deliveryman.order.processing',compact('data'));
+    }
+    public function order_completed()
+    {
+        $data=Order::where('status',3)->latest()->paginate(10);
+        return view('backend.deliveryman.order.completed',compact('data'));
+    }
     public function track( $id)
     {
         $order=Order::find($id);
