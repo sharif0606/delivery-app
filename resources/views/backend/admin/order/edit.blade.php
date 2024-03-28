@@ -2,7 +2,7 @@
 
 @section('content')
 @php $status=['Pending','Accepted','Processing','Completed','Return'] @endphp
-<div class="container">
+<div class="content px-3 py-4">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card formi">
@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{route(request()->session()->get('roleIdentity').'.order.update',$order->id)}}">
                         @csrf
-                        @method("PUT");
+                        @method("PUT")
                         <div class="row">
                             <div class="col-sm-4">
                                 <label for="pickup_date">Pickup Date:</label>

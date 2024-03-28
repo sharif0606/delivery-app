@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery App</title>
+    <title>Courierpro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light px-4 border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand fs-2" href="#">Delivery<span class="text-primary">Swift</span></a>
+                <a class="navbar-brand fs-2" href="#">Courier<span class="text-primary">Pro</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" href="{{route('home')}}#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#service">Service</a>
+                            <a class="nav-link" href="{{route('service')}}">Service</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('orderTrack')}}">Track</a>
@@ -63,10 +63,10 @@
 
             </div>
             <div class="credits text-center">
-                Designed By <a href="#">DeliverySwift</a>
+                Designed By <a href="#">Courierpro</a>
             </div>
             <div class="copyright text-center">
-                &copy; Copyright <strong><span>DeliverySwift</span></strong>. All Right Reserved
+                &copy; Copyright <strong><span>Courierpro</span></strong>. All Right Reserved
             </div>
         </footer>
 

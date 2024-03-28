@@ -21,9 +21,20 @@ class OrderController extends Controller
     }
     public function order_accepted()
     {
-        $data=Order::where('status',2)->latest()->paginate(10);
+        $data=Order::where('status',1)->latest()->paginate(10);
         return view('backend.admin.order.accepted',compact('data'));
     }
+    public function order_processing()
+    {
+        $data=Order::where('status',2)->latest()->paginate(10);
+        return view('backend.admin.order.processing',compact('data'));
+    }
+    public function order_completed()
+    {
+        $data=Order::where('status',3)->latest()->paginate(10);
+        return view('backend.admin.order.completed',compact('data'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
