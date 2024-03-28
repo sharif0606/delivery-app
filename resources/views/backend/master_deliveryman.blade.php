@@ -27,13 +27,6 @@
                 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
-<<<<<<< HEAD
-                    <i class="lni lni-cart"></i>
-                        <span>Order List</span>
-                    </a>
-                </li>
-
-=======
                         <i class="lni lni-question-circle"></i>
                         <span>Pending Orders</span>
                     </a>
@@ -61,7 +54,6 @@
                 </li>
 
                 
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
             </ul>
 
 
