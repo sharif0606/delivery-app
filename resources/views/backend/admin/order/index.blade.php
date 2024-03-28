@@ -41,6 +41,10 @@
                                             <i class="lni lni-pencil"></i>
                                             Edit
                                         </a>
+                                        <a href="{{route(request()->session()->get('roleIdentity').'.order_invoice',$d->id)}}" class="btn btn-info">
+                                            <i class="lni lni-file"></i>
+                                            Invoice
+                                        </a>
                                     </td>
                                 </tr>
                             @empty

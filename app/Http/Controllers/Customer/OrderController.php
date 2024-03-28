@@ -30,7 +30,13 @@ class OrderController extends Controller
         $type=Type::orderBy('name')->get();
         return view('backend.customer.order.create',compact('location','type'));
     }
-
+    /**
+     * Display the specified resource.
+     */
+    public function invoice(Order $order)
+    {
+        return view('backend.customer.order.invoice',compact('order'));
+    }
     public function check_rate(Request $request){
 
         $base_price=$weight_cost=$urgent=$total=0;

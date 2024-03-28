@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Deliveryman;
 
 use App\Http\Controllers\Controller;
 use App\Models\OrderTracking;
+
 use Illuminate\Http\Request;
 use App\Models\Location;
 use App\Models\Type;
 use App\Models\Order;
+use App\Models\DeliveryCostCalculator;
 use DB;
 class OrderController extends Controller
 {
@@ -55,4 +57,3 @@ class OrderController extends Controller
         }
     }
 }
-

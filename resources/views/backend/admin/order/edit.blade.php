@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="weight">Weight:</label>
+                                    <label for="weight">Weight (In KG):</label>
                                     <input type="number" class="form-control" value="{{$order->weight}}" id="weight" name="weight">
                                 </div>
                                
@@ -160,3 +160,39 @@
 </div>
 
 @endsection
+
+@push('script')
+<script>
+    function get_cost(){
+        // let pickup_location=$('#pickup_location').val();
+        // let delivery_location=$('#delivery_location').val();
+        // let type_id=$('#type_id').val();
+        // let weight=$('#weight').val();
+        // let is_urgent=$('#is_urgent').val();
+        let obj={
+            'pickup_location':$('#pickup_location').val(),
+            'delivery_location':$('#delivery_location').val(),
+            'type_id':$('#type_id').val(),
+            'weight':$('#weight').val(),
+            'is_urgent':$('#is_urgent').val(),
+        }
+        
+        $.get("{{route(request()->session()->get('roleIdentity').'.order.check_rate')}}",obj, function(data, status){
+            if(data.status){
+                $('#base_price').val(data.base_price)
+                $('.base_price').text(data.base_price)
+                $('#weight_cost').val(data.weight_cost)
+                $('.weight_cost').text(data.weight_cost)
+                $('#urgent').val(data.urgent)
+                $('.urgent').text(data.urgent)
+                $('.total_cost').text(data.total)
+            }else{
+                $('#base_price,#weight_cost,#urgent').val('0.00')
+                $('.urgent,.total_cost,.weight_cost,.base_price').text('0.00')
+
+                alert('Our service is not available in this location with your package weight.')
+            }
+        });
+    }
+</script>
+@endpush
