@@ -39,16 +39,20 @@ class AuthenticationController extends Controller
     public function login(SigninRequest $request){
         try{
             $user = User::where('email', $request->email)->first();
-            if(Hash::check($request->password , $user->password)){
-                $this->setSession($user);
+            if($user != null){
+                if(Hash::check($request->password , $user->password)){
+                    $this->setSession($user);
 
-                if($user->role_id==1)
-                    return redirect()->route('admin.dashboard');
-                else if($user->role_id==2)
-                    return redirect(route('customer.dashboard'));
-                else
-                    return redirect(route('deliveryman.dashboard'));
+                    if($user->role_id==1)
+                        return redirect()->route('admin.dashboard');
+                    else if($user->role_id==2)
+                        return redirect(route('customer.dashboard'));
+                    else
+                        return redirect(route('deliveryman.dashboard'));
 
+                }else{
+                    return redirect()->back()->withInput();
+                }
             }else{
                 return redirect()->back()->withInput();
             }

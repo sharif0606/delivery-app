@@ -32,41 +32,11 @@
                 
                 <li class="sidebar-item">
                     <a href="{{route(request()->session()->get('roleIdentity').'.order.index')}}" class="sidebar-link">
-<<<<<<< HEAD
                     <i class="lni lni-cart"></i>
                         <span>Order List</span>
                     </a>
                 </li>
 
-=======
-                        <i class="lni lni-question-circle"></i>
-                        <span>Pending Orders</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.order_accepted')}}" class="sidebar-link">
-                        <i class="lni lni-thumbs-up"></i>
-                        <span>Accepted Order</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.order_processing')}}" class="sidebar-link">
-                        <i class="lni lni-reload"></i>
-                        <span>Processing Order</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="{{route(request()->session()->get('roleIdentity').'.order_completed')}}" class="sidebar-link">
-                        <i class="lni lni-checkmark-circle"></i>
-                        <span>Completed Order</span>
-                    </a>
-                </li>
-
-                
->>>>>>> d6b2647d14408694c48781d72f64f47fb103285d
             </ul>
 
 
