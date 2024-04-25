@@ -256,3 +256,45 @@ footer{
     align-items: center;
     
 }
+
+
+
+.invoice-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .invoice-details {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-details table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .invoice-details table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .invoice-items {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-items table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .invoice-items table th,
+  .invoice-items table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .invoice-total {
+    text-align: right;
+  }
+  

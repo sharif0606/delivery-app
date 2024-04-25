@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function index()
     {
         $user = request()->session()->get('userId');
-        $data = Order::where('delivery_boy_id', $user)->latest()->paginate(10);
+        $data = Order::where('delivery_boy_id', $user)->where('status','>=',1)->latest()->paginate(10);
         return view('backend.deliveryman.order.index', compact('data'));
     }
    
